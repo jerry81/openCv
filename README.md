@@ -71,7 +71,19 @@ color only uses one channel - easier to process color
 
 rgb uses 3 channels
 
+### create a filter
+
+linear filter uses filter2D function
+
+### sobel derivatives
+
+used to detect edges - a jump in intensity between pixels
+
 ### definitions
+
+correlation: operation between image or part of image and operator (kernel) 
+
+kernel - fixed size array coefficients with anchor point in center
 
 morphological operations - operations that process images based on shapes
 
