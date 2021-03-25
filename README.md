@@ -79,6 +79,22 @@ linear filter uses filter2D function
 
 used to detect edges - a jump in intensity between pixels
 
+### laplacian 
+
+uses second derivative - finds peaks - also used to detect edges
+
+### canny
+
+even betteer edge detector than the above 2
+
+### hough line 
+
+for detecting straight lines
+
+### hough circle 
+
+For detecting circles 
+
 ### definitions
 
 correlation: operation between image or part of image and operator (kernel) 
