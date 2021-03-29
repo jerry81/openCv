@@ -101,6 +101,17 @@ improves contrast in image
 
 makes intensity frequency graph more spread out, giving differing intensities, instead of a single peak of the same intensity
 
+### finding and drawing contours and others
+
+discovers the outlines of shapes in the picture 
+
+convex hull - gets outlines the shapes without concave parts 
+
+boundingRect and minEnclosingCircle for getting bounding box and bounding circles for shapes in image
+a.  use canny to get the outlines
+b.  find contours from canny output
+c.  approximate enclosing polygons using approxPolyDP - applies approximation, boundingRect and minEnclosingCircle uses this output 
+
 ### slow motion video effect
 
 1.  vc = VideoCapture(srcFile)
@@ -180,3 +191,5 @@ optimization function - minimize the loss function by training the parameters mo
 
 gradient descent - from wikipedia - finds local minimum of differentiable function.  takes repeated step in opposite direction of gradient - Haskell Curry studied for use in optimization functions in 1944
 gradient - represented with upside down triangle.  vector calculus concept - vector field whose value at point is a vector compmosed of partial derivatives at p å - direction and rate of fastest increase.  points in a field where rate of change is fastest
+
+image moments (image processing) - weighted avg of image pixel intensities 
