@@ -128,6 +128,19 @@ example application - debluring a license plate that was in motion
 
 e.g. dots that are evenly spread throughout the image 
 
+### camera calibration
+
+openCV allows you to calculate distance of 3D geometry from camera
+
+read in 3d textured object model and object mesh 
+
+model registration 
+    a.  take image and register as 3d mesh - must provide parameters for camera 
+    b.  3d points outputed into YAML format 
+
+model detection 
+    a.  estimate object pose given 3d textured model 
+
 ### slow motion video effect
 
 1.  vc = VideoCapture(srcFile)
