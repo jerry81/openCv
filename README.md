@@ -119,7 +119,7 @@ output - probability of rain
 algorithm - basic baynesian 
 
 1.  simplify the inputs, humidity becomes three levels of humidity , cloud density becomes 3 levels(ranges) as well, weather (rain or shine) becomes two inputs
-2.  baynesian algorithm: P = P
+2.  bayesian algorithm: P = P(W2|G,H) = prob (weather output) given a humidity * probability of weather output / Probability of cloud density * prob of output  given humidity input * probability of the output / probability of the humidity
 
 
 ### definitions
