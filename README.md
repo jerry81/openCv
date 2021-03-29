@@ -119,7 +119,32 @@ output - probability of rain
 algorithm - basic baynesian 
 
 1.  simplify the inputs, humidity becomes three levels of humidity , cloud density becomes 3 levels(ranges) as well, weather (rain or shine) becomes two inputs
-2.  bayesian algorithm: P = P(W2|G,H) = prob (weather output) given a humidity * probability of weather output / Probability of cloud density * prob of output  given humidity input * probability of the output / probability of the humidity
+2.  a.  bayesian algorithm: P = P(W2|G,H) = prob (weather output) given a humidity * probability of weather output / Probability of cloud density * prob of output  given humidity input * probability of the output / probability of the humidity
+    b.  the general algorithm: P(A|B) aka probability of A given B = P(B|A) * P(a) / P(b)
+    c.  example with numbers:
+        i.  given 50% of rainy start cloudy
+        ii.  40% of mornings are cloudy
+        iii.  10% of days are rainy
+        iv.  what is chance of rain?
+        v.  p(r|c) = .5 * .1 / .4 = .125
+3.  to calculate P（H|W2) and P(G|W2), calculated from past statistics, a large amount of sample data, 10 years of it, lots of work
+4.  using 10 years of data, split data into two parts
+    a.  feature matrix - accumulates all vectors from the data
+    b.  response vector - output as a category (rainy or not)
+5.  with a mapping between feature matrix and response vector, you can input today's features, to make a response vector.  then we can use predict() to get the probability of the two categories with a correctness score 
+6.  machine learning's main workload:  categorization, regression
+7.  we get a ML model to predict outputs for unknowns
+8.  iris classificatino example
+    a.  load iris data
+    b.  import model feeding in data (training data and test data) - splits into feature matrix and response vector (training sample should be slightly larger than testing sample) .6 to .4 split
+    c.  use guassian naive bayes 
+    d.  fit() used using model, inputing x_train and y_train - no output used, this trains the gnb model
+    e.  test() used finally with test data to check accuracy of the model 
+
+9.  so we now have a trained ML model.  now what?  can use predict() method - input being an array, output is a response vector 
+10.  applications - predict who will win a football match 
+recommendation engines 
+
 
 
 ### definitions
