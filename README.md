@@ -95,7 +95,37 @@ for detecting straight lines
 
 For detecting circles 
 
+### histogram equalization
+
+improves contrast in image
+
+makes intensity frequency graph more spread out, giving differing intensities, instead of a single peak of the same intensity
+
+### slow motion video effect
+
+1.  vc = VideoCapture(srcFile)
+2.  write to four videos with VideoWriter
+3.  VideoWriter_fourcc specifies an encoding format 
+4.  set the fps of one of the writers to a lower number  
+5.  vc.aread() reads a single frame 
+6.  video_writer.write writes a single frame 
+7.  after the three videos have been written , use those three videos to write to the final fourth video 
+
+### machine learning with open cv 
+
+example: weather
+inputs - temperature, cloud density, humidity
+output - probability of rain
+algorithm - basic baynesian 
+
+1.  simplify the inputs, humidity becomes three levels of humidity , cloud density becomes 3 levels(ranges) as well, weather (rain or shine) becomes two inputs
+2.  baynesian algorithm: P = P
+
+
 ### definitions
+
+affine transformation - matrix multiplication followed by vector addition 
+used for rotations, translations, scale
 
 correlation: operation between image or part of image and operator (kernel) 
 
