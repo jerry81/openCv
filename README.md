@@ -176,4 +176,7 @@ model - algorithm plus parameters after training
 loss function - used to measure the accuracy of a model
 for binary classification, the loss function output is 1 or 0 
 
-optimization function - 
+optimization function - minimize the loss function by training the parameters more.  e.g. classic gradient descent - most common optimization function - 
+
+gradient descent - from wikipedia - finds local minimum of differentiable function.  takes repeated step in opposite direction of gradient - Haskell Curry studied for use in optimization functions in 1944
+gradient - represented with upside down triangle.  vector calculus concept - vector field whose value at point is a vector compmosed of partial derivatives at p å - direction and rate of fastest increase.  points in a field where rate of change is fastest
