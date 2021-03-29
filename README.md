@@ -74,6 +74,7 @@ rgb uses 3 channels
 ### create a filter
 
 linear filter uses filter2D function
+filter2D ultimately sharpens the image using Laplacian filtering
 
 ### sobel derivatives
 
@@ -111,6 +112,21 @@ boundingRect and minEnclosingCircle for getting bounding box and bounding circle
 a.  use canny to get the outlines
 b.  find contours from canny output
 c.  approximate enclosing polygons using approxPolyDP - applies approximation, boundingRect and minEnclosingCircle uses this output 
+
+### debluring 
+
+PSF - point spread function, e.g. circuar PSF - has one param, radius R - goal - to get estimate of original image 
+PSF of linear motion takes in LEN and THETA 
+
+Weiner filter - way to restore blurred image 
+
+SNR - signal to noise ratio 
+
+example application - debluring a license plate that was in motion 
+
+### remove periodic noise 
+
+e.g. dots that are evenly spread throughout the image 
 
 ### slow motion video effect
 
@@ -193,3 +209,4 @@ gradient descent - from wikipedia - finds local minimum of differentiable functi
 gradient - represented with upside down triangle.  vector calculus concept - vector field whose value at point is a vector compmosed of partial derivatives at p å - direction and rate of fastest increase.  points in a field where rate of change is fastest
 
 image moments (image processing) - weighted avg of image pixel intensities 
+
