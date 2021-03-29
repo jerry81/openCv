@@ -145,8 +145,6 @@ algorithm - basic baynesian
 10.  applications - predict who will win a football match 
 recommendation engines 
 
-
-
 ### definitions
 
 affine transformation - matrix multiplication followed by vector addition 
@@ -163,3 +161,19 @@ origin is the center pixel
 same size and shape as objects u want to process
 
 upsample - scale up
+
+ML defs
+
+sampling - input data, output data aka labels
+
+dataset - training data, validation data, testing data
+
+features - rows of the input feature matrix 
+in terms of images, input could be every pixel, which would have way too many dimensions.  instead, group up inputs into features to reduce the number of dimensions also improves the performance of the model 
+
+model - algorithm plus parameters after training
+
+loss function - used to measure the accuracy of a model
+for binary classification, the loss function output is 1 or 0 
+
+optimization function - 
