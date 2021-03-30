@@ -148,7 +148,17 @@ model detection
 3.  goodFeaturesToTrack method - also determines strong corners in image
 4.  featureDetector interface - finds interest points - finds all areas of high contrast
 5.  feature description - matches keypoints between two pictures
-6.  FLANN = 
+6.  SIFT - scale-invariant feature transform - deals with scaling - if zoomed in some corners become rounded and not classified as corner 
+7.  SURF - speeded up robust features - SIFT slow, so SURF is speeded-up version 
+8.  FAST - even faster corner detector 
+9.  BREIF - binary robust independent elementary features - SIFT and SURF take lots of memory 
+an optimization that simplifies pixels into binary 
+10.  BF matcher, FLANN matcher - Brute force - match first set with second set with distance calc - drawMatches actually draws the lines connecting matched features in two images.  FLANN - fast library for Approximate nearest neighbors - optimized faster than BFMatcher
+11.  Feature Mapping and Homography - for finding objects in complex image.  findHomography - pass set of points from both images
+
+### opencv machine learning modules
+
+
 
 ### slow motion video effect
 
