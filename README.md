@@ -141,6 +141,15 @@ model registration
 model detection 
     a.  estimate object pose given 3d textured model 
 
+### feature framework
+
+1.  what are features? - edges, corners, blobs
+2.  corner Harris - corner is intersection of two edges
+3.  goodFeaturesToTrack method - also determines strong corners in image
+4.  featureDetector interface - finds interest points - finds all areas of high contrast
+5.  feature description - matches keypoints between two pictures
+6.  FLANN = 
+
 ### slow motion video effect
 
 1.  vc = VideoCapture(srcFile)
@@ -202,7 +211,9 @@ same size and shape as objects u want to process
 
 upsample - scale up
 
-ML defs
+image moments (image processing) - weighted avg of image pixel intensities 
+
+### ML defs
 
 sampling - input data, output data aka labels
 
@@ -221,5 +232,26 @@ optimization function - minimize the loss function by training the parameters mo
 gradient descent - from wikipedia - finds local minimum of differentiable function.  takes repeated step in opposite direction of gradient - Haskell Curry studied for use in optimization functions in 1944
 gradient - represented with upside down triangle.  vector calculus concept - vector field whose value at point is a vector compmosed of partial derivatives at p å - direction and rate of fastest increase.  points in a field where rate of change is fastest
 
-image moments (image processing) - weighted avg of image pixel intensities 
+generalization ability - ability to stay accurate in differing scenarios
 
+underfitting - when model is not complex enough
+
+overfitting - performance suffers
+
+regression - inputting new samples and features, outputting predictions 
+
+deviation - difference btw. prediction and actual
+
+supervised vs unsupervised - x vectors also have labeled y's during training 
+adjust params based on sample y
+unsupervised has no y - groups similar objects, used in clustering algorithms
+
+clustering vs classification - classification defines labels first, clustering does not 
+
+normalization - project points onto 0 to 1 space 
+
+covariance - correlates the rate of change of two variables, inverse or directly proportionate 
+
+error - overall accuracy 
+bias - difference between output and actual 
+variance - expected vs output and stability between predictions
