@@ -158,7 +158,45 @@ an optimization that simplifies pixels into binary
 
 ### opencv machine learning modules
 
-
+1.  k-nearest neighbor - one of simplest classification algorithms for supervised learning 
+    a.  nearest neighbor groups new objects according to its k nearest neighbors where majority wins 
+    b.  memory intensive
+    c.  cv.ml.KNearest_create() to create a knn object
+    d.  knn.train(trainData, cv.ml.ROW_SAMPLE, responses) where trainData is a (x,y) vector, responses is label output red or blue 
+    e.  knn.findNearest(newcomer, 3) predicts the class of newcomer using k=3.  first arg can also be an array
+2.  OCR (optical character recognition) of handwritten digits 
+    a.  step 1 - read in 5000 handwritten digits (20x20 images * 5000), 10 digits, 500 per digit
+    b.  step 2 - flatten 20x20 to 400 pixels
+    c.  250 images of each digit training data 250 for testing 
+    d.  create knn
+    e.  train knn with training data with labels 
+    f.  knn.findNearest with test data
+    g.  from result, can find number of matches (result == test labels)
+    h.  accuracy is percent matches
+3.  SVM
+    a.  Linearly separable data - can use a straight line to separate classes if all points were plotted out on a graph 
+    b.  the line must have the largest distance between points on either side
+    c.  wx + b: w weight, b bias 
+    d.  non-linearly separable data - use quadratic functions 
+    e.  map to higher dimensionality as at a higher dimensional space, the data set may be linearly separable
+4.  OCR using SVM
+    a.  step 1.  deskew image by taking its moments and warpAffine on it 
+    b.  step 2.  use HOG (histogram of oriented gradients) as feature vectors - sobel (edge detector) to get gx and gy - then convert cartesian points to polar (gives magnitude and angle).  angles are then normalized into integers between 0 and 16, then use bincount (counts frequency of each value and places them into bins ) and hstack to stack arrays horizontally to create histogram. 
+    c.   step 3.  read in file, split to 50 rows (100 items per row), then into 100 columns 
+    d.   deskew by running deskew on each row,
+    e.  get hogdata by running hog on each row 
+    f.  reshape the histogram 
+    g.  SVM_create () creates an svm 
+    h.  setKernel(cv.ml.SVM_LINEAR)
+    I.  setType(CV.ML.SVM_C_SVC)
+    j.  setC, setGamma
+    k.  train
+5.  K-Means clustering 
+    a.  cluster data points into groups 
+    b.  choise two "centroids" - points seemingly chosen at random
+    c.  calculate distance of each point to both centroids and label the points as belonging to one or the other
+    d.  calculate avg of all points belonging to each group, respectively. these are new centroids
+    e.  keep iterating until centroids converge to fixed points.
 
 ### slow motion video effect
 
@@ -287,3 +325,13 @@ stage 2
 6.  test features uses each tree in forest from stage 1 
 7.  calculate votes for each output
 8.  take highest voted as final prediction 
+
+numpy reshape - give new shape to array without changing data.  2 params, shape, order.  shape === -1 infers from len of array 
+
+dot product - multiply every point of a vector with every point of another, and add the result resulting in a single scalar
+
+HOG - histogram of oriented gradients - feature descriptor used in CV and image proc for object detection 
+
+numpy vsplit(array, indicies) - split array into multiple subarrays vertically (row-wise)
+    array - input array
+    indicies - number of items in new array, can also be array [x,y] specifying target dimensions
