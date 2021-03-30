@@ -194,6 +194,15 @@ algorithm - basic baynesian
 10.  applications - predict who will win a football match 
 recommendation engines 
 
+### classic ML example for image preprocessing 
+
+1. facial recognition for security 
+2.  we are given many photos 
+3.  step 1 - preprocess the data
+4.  step 2 - extract features 
+5.  step 3 - pick algorithm (e.g. Random Forest (RF) and Support Vector Machine (SVM))
+6.  step 4 - with face detection model, with input being a picture of a face, can check it against our system, where we stored features of that face?
+
 ### definitions
 
 affine transformation - matrix multiplication followed by vector addition 
@@ -255,3 +264,16 @@ covariance - correlates the rate of change of two variables, inverse or directly
 error - overall accuracy 
 bias - difference between output and actual 
 variance - expected vs output and stability between predictions
+
+random forest - a supervised classification algorithm .  makes a forest and makes it random.  more trees more accurate
+used both in classification and regression 
+stage 1
+1.  randomly select k features from total m features
+2.  among k features calculate node d using split point
+3.  split d into daughter nodes with "best split"
+4.  repeat 1-3 until l nodes reached
+5.  repeat 1-4 n number of times to create n trees
+stage 2 
+6.  test features uses each tree in forest from stage 1 
+7.  calculate votes for each output
+8.  take highest voted as final prediction 
