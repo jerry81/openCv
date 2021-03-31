@@ -208,6 +208,18 @@ an optimization that simplifies pixels into binary
 6.  video_writer.write writes a single frame 
 7.  after the three videos have been written , use those three videos to write to the final fourth video 
 
+### cascade classifier
+
+1.  for object detection 
+2.  cv::CascadeClassifier class - detects objects in video stream 
+3.  haar cascade classifier used on face detection 
+    a.  requires many positive and negative images to train classifier
+    b.  applies three feature templates (edge, line, and four-rectangle features) on all possible sizes and locations 
+4.  code example
+    a.  face and eyes cascades loaded (pretrained)
+    b.  capture webcam 
+    c.  apply classifier with - cc.detectMultiscale(Mat frame, faces)
+
 ### machine learning with open cv 
 
 example: weather
