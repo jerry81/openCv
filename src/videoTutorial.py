@@ -4,9 +4,9 @@ cap = cv.VideoCapture(0) # accesses webcam
 if not cap.isOpened():
     print("Cannot open camera")
     exit()
-while True:
+while True: # loop forever
     # Capture frame-by-frame
-    ret, frame = cap.read()
+    ret, frame = cap.read() # destructuring the tuple response 
     # if frame is read correctly ret is True
     if not ret:
         print("Can't receive frame (stream end?). Exiting ...")
